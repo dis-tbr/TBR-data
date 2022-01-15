@@ -1,3 +1,4 @@
 {
-  "slot": [":yen:", ":dollar:", ":euro:"]
+  "slot": [":yen:", ":dollar:", ":euro:"],
+  "flipcoin": ["https://i.xaliks.xyz/sjjZH.png", "https://i.xaliks.xyz/Hyjki.png"]
 }
