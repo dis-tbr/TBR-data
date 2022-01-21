@@ -1,1 +1,1 @@
-### FORK FOR ADDING ANSWERS AND FIXING BUGS IN RUDBOT!
+### Как добавить свой текст? https://www.youtube.com/watch?v=IzlE8BwlBlo
