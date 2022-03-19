@@ -7,6 +7,17 @@ const muteReasons = [ // ["Название правила", ВРЕМЯ]
     ["Распространение файлов, содержащих материалы противного характера/шоковый контент, 18+", 36000000]
 ];
 
+const spamSymbols = [
+    // Скелетик петя))0)))
+    "░",
+    "█",
+    "▄",
+    "▀",
+    "▐",
+    "▌"
+].map((symbol) => symbol.repeat(5));
+
 module.exports = {
-    muteReasons
+    muteReasons,
+    spamSymbols
 }
