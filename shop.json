@@ -1,20 +1,21 @@
 [{
-    "name": "Эмодзи на неделю",
-    "description": "Кастомная реакция под вашими сообщениями.",
-    "reply": "Вы активировали кастомную реакцию. Изменить её - `/donate edit emoji`",
-    "price": 1000000
-  },
-  {
-    "name": "Цвет на неделю",
-    "description": "Кастомный цвет для ника.",
-    "reply": "Вы активировали кастомный цвет. Изменить его - `/donate edit color`",
-    "price": 1500000
-  },
-  {
-    "name": "Роль на неделю",
-    "description": "Кастомная роль на сервере.",
-    "eval": "message.guild.roles.create({name:`Роль ${message.author.tag}`,position:message.guild.roles.cache.get(\"804398233564086322\").position+1,color: Math.floor(Math.random()*12345678).toString(16),hoist:true}).then((r)=> {message.member.roles.add(r.id);bot.database.don.updateOneOrCreate({id:message.author.id},{role:{id:r.id,end:Date.now()+604800000}})});",
-    "reply": "Вы активировали кастомную роль. Изменить её - `/donate edit role`",
-    "price": 2000000
-  }
+  "name": "Эмодзи на неделю",
+  "description": "Кастомная реакция под вашими сообщениями.",
+  "reply": "Вы активировали кастомную реакцию. Изменить её - `/donate edit emoji`",
+  "price": 1000000
+},
+{
+  "name": "Цвет на неделю",
+  "description": "Кастомный цвет для ника.",
+  "eval": "message.guild.roles.create({name:`Цвет ${message.author.tag}`,position:message.guild.roles.cache.get(\"804398233564086322\").position+1,color: Math.floor(Math.random()*12345678).toString(16)}).then((r)=> {message.member.roles.add(r.id);bot.database.don.updateOneOrCreate({id:message.author.id},{color:{id:r.id,end:Date.now()+604800000}})});",
+  "reply": "Вы активировали кастомный цвет. Изменить его - `/donate edit color`",
+  "price": 1500000
+},
+{
+  "name": "Роль на неделю",
+  "description": "Кастомная роль на сервере.",
+  "eval": "message.guild.roles.create({name:`Роль ${message.author.tag}`,position:message.guild.roles.cache.get(\"804398233564086322\").position+1,color: Math.floor(Math.random()*12345678).toString(16),hoist:true}).then((r)=> {message.member.roles.add(r.id);bot.database.don.updateOneOrCreate({id:message.author.id},{role:{id:r.id,end:Date.now()+604800000}})});",
+  "reply": "Вы активировали кастомную роль. Изменить её - `/donate edit role`",
+  "price": 2000000
+}
 ]
