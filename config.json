@@ -1,3 +1,8 @@
 {
-  "symbol": "<:RudCoin:954702763449778206>"
+  "symbol": "<:RudCoin:954702763449778206>",
+  "levels": {
+    "multiplier": 100,
+    "min": 10,
+    "max": 30
+  }
 }
