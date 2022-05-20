@@ -1,6 +1,6 @@
 [{
     "name": "Кастомная ранг-карточка на неделю",
-    "description": "Вы можете редактировать свою ранг-карточку. Цвета, задний фон в `${prefix}rank` и задний фон в `${prefix}leaders`.",
+    "description": "Вы можете редактировать свою ранг-карточку. Цвета, задний фон в `!!rank` и задний фон в `!!leaders`.",
     "reply": "Изменить ранг-карточку - `/donate edit levels`",
     "eval": "bot.database.don.updateOneOrCreate({id:message.author.id},{levels:{end:Date.now()+604800000}});",
     "price": 500000
