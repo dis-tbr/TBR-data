@@ -25,5 +25,12 @@
     "eval": "message.guild.roles.create({name:`Роль ${message.author.tag}`,position:message.guild.roles.cache.get(\"804398233564086322\").position+1,color: Math.floor(Math.random()*12345678).toString(16),hoist:true}).then((r)=> {message.member.roles.add(r.id);bot.database.don.updateOneOrCreate({id:message.author.id},{role:{id:r.id,end:Date.now()+604800000}})});",
     "reply": "Вы активировали кастомную роль. Изменить её - `/donate edit role`",
     "price": 1500000
+  },
+  {
+    "name": "Отключение правил на 10 минут",
+    "description": "Команды авто-модерации работать не будут, а так же модераторы не смогут вас замутить :D",
+    "eval": "bot.temp.set(\"disable_rules\",Date.now()+600000);message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} отключил правила на **10** минут! Развлекаемся :D`).then((msg)=>msg.pin());",
+    "reply": "Поздравляю! Вы отключили правила на 10 минут для всего сервера. Развлекайтесь :3",
+    "price": 555555
   }
 ]
