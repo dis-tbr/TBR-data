@@ -1,4 +1,5 @@
-[{
+[
+  {
     "name": "Кастомная ранг-карточка на неделю",
     "description": "Вы можете редактировать свою ранг-карточку. Цвета, задний фон в `!!rank` и задний фон в `!!leaders`.",
     "reply": "Изменить ранг-карточку - `/donate edit levels`",
@@ -29,15 +30,22 @@
   {
     "name": "Отключение правил на 10 минут",
     "description": "Команды авто-модерации работать не будут, а так же модераторы не смогут вас замутить :D",
-    "eval": "bot.temp.set(\"disable_rules\",Date.now()+600000);message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} отключил правила на **10** минут! Развлекаемся :D`).then((msg)=>msg.pin());",
+    "eval": "bot.temp.set(\"disable_rules\",Date.now()+600000);message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} отключил правила на **10** минут! Развлекаемся :D Окончание <t:${parseInt((Date.now()+600000)/100)}:R>`).then((msg)=>msg.pin());",
     "reply": "Поздравляю! Вы отключили правила на 10 минут для всего сервера. Развлекайтесь :3",
     "price": 555555
   },
   {
     "name": "Отключение чата на 5 минут",
     "description": "Чат отключен для всех, но только не для вас. Вы можете написать все что угодно и вам за это ничего не будет",
-    "eval": "bot.temp.set(\"disable_chat\",{date:Date.now()+300000,id:message.author.id});message.guild.channels.fetch(\"681196527628058649\").then((channel)=>{channel.permissionOverwrites.edit(message.guild.id,{SEND_MESSAGES:false});channel.permissionOverwrites.edit(message.author.id,{SEND_MESSAGES:true})});message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} отключил чат на **5** минут!`)",
+    "eval": "bot.temp.set(\"disable_chat\",{date:Date.now()+300000,id:message.author.id});message.guild.channels.fetch(\"681196527628058649\").then((channel)=>{channel.permissionOverwrites.edit(message.guild.id,{SEND_MESSAGES:false});channel.permissionOverwrites.edit(message.author.id,{SEND_MESSAGES:true})});message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} отключил чат на **5** минут! Окончание <t:${parseInt((Date.now()+300000)/100)}:R>`)",
     "reply": "Поздравляю! Вы отключили чат на 5 минут для всего сервера. Развлекайтесь :3",
     "price": 333333
+  },
+  {
+    "name": "Бустер опыта 500% на 15 минут",
+    "description": "Бустер опыта 500% для канала <#681196527628058649>. Отлично сочетается с отключенными правилами",
+    "eval": "bot.temp.set(\"levelMultiplier\",{date:Date.now()+900000,mult:500});message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} включил бустер опыта 500% на **15** минут! Окончание <t:${parseInt((Date.now()+900000)/100)}:R>`)",
+    "reply": "Поздравляю! Вы включили бустер уровня 500% на 15 минут. Развлекайтесь :3",
+    "price": 444444
   }
 ]
