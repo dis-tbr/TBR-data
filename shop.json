@@ -1,11 +1,4 @@
 [{
-    "name": "Кастомная ранг-карточка на неделю",
-    "description": "Вы можете редактировать свою ранг-карточку. Цвета, задний фон в `!!rank` и задний фон в `!!leaders`.",
-    "reply": "Изменить ранг-карточку - `/donate edit levels`",
-    "eval": "bot.database.don.updateOneOrCreate({id:message.author.id},{levels:{end:Date.now()+604800000}});",
-    "price": 500000
-  },
-  {
     "name": "Эмодзи на неделю",
     "description": "Кастомная реакция под вашими сообщениями.",
     "reply": "Вы активировали кастомную реакцию. Изменить её - `/donate edit emoji`",
@@ -32,5 +25,12 @@
     "eval": "bot.temp.set(\"disable_rules\",Date.now()+600000);message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} отключил правила на **10** минут! Развлекаемся :D`).then((msg)=>msg.pin());",
     "reply": "Поздравляю! Вы отключили правила на 10 минут для всего сервера. Развлекайтесь :3",
     "price": 555555
+  },
+  {
+    "name": "Отключение чата на 5 минут",
+    "description": "Чат отключен для всех, но только не для вас. Вы можете написать все что угодно и вам за это ничего не будет",
+    "eval": "message.guild.channels.fetch(\"681196527628058649\").then((channel)=>{channel.permissionOverwrites.edit(message.guild.id,{SEND_MESSAGES:false});channel.permissionOverwrites.edit(message.author.id,{SEND_MESSAGES:true})});",
+    "reply": "Поздравляю! Вы отключили чат на 5 минут для всего сервера. Развлекайтесь :3",
+    "price": 333333
   }
 ]
