@@ -1,4 +1,11 @@
 [{
+    "name": "Кастомная ранг-карточка на неделю",
+    "description": "Вы можете редактировать свою ранг-карточку. Цвета, задний фон в `!!rank` и задний фон в `!!leaders`.",
+    "reply": "Изменить ранг-карточку - `/donate edit levels`",
+    "eval": "bot.database.don.updateOneOrCreate({id:message.author.id},{levels:{end:Date.now()+604800000}});",
+    "price": 500000
+  },
+  {
     "name": "Эмодзи на неделю",
     "description": "Кастомная реакция под вашими сообщениями.",
     "reply": "Вы активировали кастомную реакцию. Изменить её - `/donate edit emoji`",
