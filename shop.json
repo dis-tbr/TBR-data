@@ -36,7 +36,7 @@
   {
     "name": "Отключение чата на 5 минут",
     "description": "Чат отключен для всех, но только не для вас. Вы можете написать все что угодно и вам за это ничего не будет",
-    "eval": "bot.temp.set(\"disable_chat\",{date:Date.now()+300000,id:message.author.id});message.guild.channels.fetch(\"681196527628058649\").then((channel)=>{channel.permissionOverwrites.edit(message.guild.id,{SEND_MESSAGES:false});channel.permissionOverwrites.edit(message.author.id,{SEND_MESSAGES:true})});",
+    "eval": "bot.temp.set(\"disable_chat\",{date:Date.now()+300000,id:message.author.id});message.guild.channels.fetch(\"681196527628058649\").then((channel)=>{channel.permissionOverwrites.edit(message.guild.id,{SEND_MESSAGES:false});channel.permissionOverwrites.edit(message.author.id,{SEND_MESSAGES:true})});message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} отключил чат на **5** минут!`)",
     "reply": "Поздравляю! Вы отключили чат на 5 минут для всего сервера. Развлекайтесь :3",
     "price": 333333
   }
