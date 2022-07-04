@@ -28,20 +28,6 @@
     "price": 1500000
   },
   {
-    "name": "Отключение правил на 10 минут",
-    "description": "Команды авто-модерации работать не будут, а так же модераторы не смогут вас замутить :D",
-    "eval": "const temp=require(process.cwd()+\"/data/temp.json\");temp.disable_rules=Date.now()+600000;require(\"fs\").writeFileSync(\"data/temp.json\",JSON.stringify(temp));message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} отключил правила на **10** минут! Развлекаемся :D Окончание <t:${parseInt((Date.now()+600000)/1000)}:R>`).then((msg)=>msg.pin());",
-    "reply": "Поздравляю! Вы отключили правила на 10 минут для всего сервера. Развлекайтесь :3",
-    "price": 444444
-  },
-  {
-    "name": "Отключение чата на 5 минут",
-    "description": "Чат отключен для всех, но только не для вас. Вы можете написать все что угодно и вам за это ничего не будет",
-    "eval": "const temp=require(process.cwd()+\"/data/temp.json\");temp.disable_chat={date:Date.now()+300000,id:message.author.id};require(\"fs\").writeFileSync(\"data/temp.json\",JSON.stringify(temp));message.guild.channels.fetch(\"681196527628058649\").then((channel)=>{channel.permissionOverwrites.edit(message.guild.id,{SEND_MESSAGES:false});channel.permissionOverwrites.edit(message.author.id,{SEND_MESSAGES:true})});message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} отключил чат на **5** минут! Окончание <t:${parseInt((Date.now()+300000)/1000)}:R>`)",
-    "reply": "Поздравляю! Вы отключили чат на 5 минут для всего сервера. Развлекайтесь :3",
-    "price": 333333
-  },
-  {
     "name": "Бустер опыта 500% на 10 минут",
     "description": "Бустер опыта 500% для канала <#681196527628058649>. Отлично сочетается с отключенными правилами",
     "eval": "const temp=require(process.cwd()+\"/data/temp.json\");temp.levelMultiplier={date:Date.now()+600000,mult:500};require(\"fs\").writeFileSync(\"data/temp.json\",JSON.stringify(temp));message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} включил бустер опыта 500% на **15** минут! Окончание <t:${parseInt((Date.now()+600000)/1000)}:R>`)",
