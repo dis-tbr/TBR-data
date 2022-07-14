@@ -12,12 +12,5 @@
     "eval": "message.guild.roles.create({name:`Роль ${message.author.tag}`,position:message.guild.roles.cache.get(\"804398233564086322\").position+1,color: Math.floor(Math.random()*12345678).toString(16),hoist:true}).then((r)=> {message.member.roles.add(r.id);bot.database.don.updateOneOrCreate({id:message.author.id},{role:{id:r.id,end:Date.now()+604800000}})});",
     "reply": "Вы активировали кастомную роль. Изменить её - `/donate edit role`",
     "price": 1500000
-  },
-  {
-    "name": "Бустер опыта 500% на 10 минут",
-    "description": "Бустер опыта 500% для канала <#681196527628058649>.",
-    "eval": "const temp=require(process.cwd()+\"/data/temp.json\");temp.levelMultiplier={date:Date.now()+600000,mult:500};require(\"fs\").writeFileSync(\"data/temp.json\",JSON.stringify(temp));message.guild.channels.cache.get(\"681196527628058649\").send(`${message.author} включил бустер опыта 500% на **15** минут! Окончание <t:${parseInt((Date.now()+600000)/1000)}:R>`)",
-    "reply": "Поздравляю! Вы включили бустер уровня 500% на 10 минут. Развлекайтесь :3",
-    "price": 333333
   }
 ]
