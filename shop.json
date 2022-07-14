@@ -3,13 +3,13 @@
     "name": "Эмодзи на неделю",
     "description": "Кастомная реакция под вашими сообщениями.",
     "reply": "Вы активировали кастомную реакцию. Изменить её - `/donate edit emoji`",
-    "eval": "const id=message.guild.emojis.cache.random().id;bot.don_emojis.set(message.author.id,id);bot.database.don.updateOneOrCreate({id:message.author.id},{emoji:{id,end:Date.now()+604800000}});",
+    "eval": "bot.database.donate.update({where:{memberId:message.author.id},data:{emoji:{upsert:{update:{end:{increment:604800000}},set:{end:Date.now()+604800000,id:message.guild.emojis.cache.random().id}}}}});"
     "price": 500000
   },
   {
     "name": "Роль на неделю",
     "description": "Кастомная роль на сервере.",
-    "eval": "message.guild.roles.create({name:`Роль ${message.author.tag}`,position:message.guild.roles.cache.get(\"804398233564086322\").position+1,color: Math.floor(Math.random()*12345678).toString(16),hoist:true}).then((r)=> {message.member.roles.add(r.id);bot.database.don.updateOneOrCreate({id:message.author.id},{role:{id:r.id,end:Date.now()+604800000}})});",
+    "eval": "(async()=>{let id=message.member.cache?.donate?.role?.id;if(!id){id=await message.guild.roles.create({name:message.author.username,position:message.guild.roles.cache.get(`804398233564086322`).position+1,color:Math.floor(Math.random()*(0xffffff+1)),hoist:true}).then(r=>r.id);await message.member.roles.add(id)};return bot.database.donate.update({where:{memberId:message.author.id},data:{role:{upsert:{update:{end:{increment:604800000}},set:{end:Date.now()+604800000,id}}}}})})()",
     "reply": "Вы активировали кастомную роль. Изменить её - `/donate edit role`",
     "price": 1500000
   }
