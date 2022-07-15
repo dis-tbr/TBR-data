@@ -63,13 +63,13 @@
       ]
     },
     "daily": {
-      "fine": {
+      "payout": {
         "min": 100,
         "max": 500
       }
     },
     "weekly": {
-      "fine": {
+      "payout": {
         "min": 1000,
         "max": 5000
       }
