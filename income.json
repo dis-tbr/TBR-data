@@ -10,7 +10,7 @@
   },
   "income": {
     "work": {
-      "cooldown": 9000000,
+      "cooldown": 4500000,
       "payout": {
         "min": 30,
         "max": 100
@@ -26,7 +26,7 @@
       ]
     },
     "crime": {
-      "cooldown": 5400000,
+      "cooldown": 4500000,
       "payout": {
         "min": 50,
         "max": 120
@@ -47,7 +47,7 @@
       ]
     },
     "rob": {
-      "cooldown": 5400000,
+      "cooldown": 2700000,
       "fine": {
         "min": 50,
         "max": 200
