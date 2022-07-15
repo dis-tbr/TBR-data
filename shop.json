@@ -3,7 +3,7 @@
     "name": "Эмодзи на неделю",
     "description": "Кастомная реакция под вашими сообщениями.",
     "reply": "Вы активировали кастомную реакцию. Изменить её - <#985451560496689182> (КУПИТЬ)",
-    "eval": "bot.database.donate.upsert({where:{memberId:message.author.id},update:{emoji:{upsert:{update:{end:{increment:6048e5}},set:{end:Date.now()+6048e5,id:message.guild.emojis.cache.random().id}}}},create:{emoji:{end:Date.now()+6048e5,id:message.guild.emojis.cache.random().id}}});",
+    "eval": "bot.database.donate.upsert({where:{memberId:message.author.id},update:{emoji:{upsert:{update:{end:{increment:6048e5}},set:{end:Date.now()+6048e5,id:message.guild.emojis.cache.random().id}}}},create:{memberId:message.author.id,emoji:{end:Date.now()+6048e5,id:message.guild.emojis.cache.random().id}}});",
     "price": 50000
   },
   {
