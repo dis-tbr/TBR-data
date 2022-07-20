@@ -12,5 +12,26 @@
 	  "eval": "(async()=>{let a=message.member.cache?.donate?.role?.id;return a||(a=await message.guild.roles.create({name:message.author.username,position:message.guild.roles.cache.get(`804398233564086322`).position+1,color:Math.floor(16777216*Math.random()),hoist:!0}).then(a=>a.id),await message.member.roles.add(a)),bot.database.donate.upsert({where:{memberId:message.author.id},update:{role:{upsert:{update:{end:{increment:6048e5}},set:{end:Date.now()+6048e5,id:a}}}},create:{memberId:message.author.id,role:{end:Date.now()+6048e5,id:a}}})})();",
 	  "reply": "Вы активировали кастомную роль. Изменить её - <#985451560496689182> (РЕДАКТИРОВАТЬ)",
 	  "price": 250000
+	}, 
+	{
+	  "name": "Классический кейс",
+	  "description": "Классический кейс",
+	  "eval": "",
+	  "reply": "123",
+	  "price": 1000
+	}, 
+	{
+	  "name": "Элитный кейс",
+	  "description": "Элитный кейс",
+	  "eval": "",
+	  "reply": "123",
+	  "price": 10000
+	}, 
+	{
+	  "name": "Премиальный кейс",
+	  "description": "Премиальный кейс",
+	  "eval": "",
+	  "reply": "123",
+	  "price": 10000
 	}
 ]  
